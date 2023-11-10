@@ -4,8 +4,8 @@ module.exports = {
     node: true,
   },
   extends: [
-    'standard',
     'plugin:@typescript-eslint/recommended',
+    'prettier',
     'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
@@ -13,10 +13,9 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'eslint-plugin-import-helpers'],
+  plugins: ['@typescript-eslint', 'eslint-plugin-import-helpers', 'prettier'],
   rules: {
     camelcase: 'off',
-    'import/no-unresolved': 'error',
     '@typescript-eslint/naming-convention': [
       'error',
       {
@@ -28,6 +27,13 @@ module.exports = {
         },
       },
     ],
+    'class-methods-use-this': 'off',
+    'import/prefer-default-export': 'off',
+    'no-shadow': 'off',
+    'no-console': 'off',
+    'no-useless-constructor': 'off',
+    'no-empty-function': 'off',
+    'lines-between-class-members': 'off',
     'import-helpers/order-imports': [
       'warn',
       {
@@ -36,10 +42,6 @@ module.exports = {
         alphabetize: { order: 'asc', ignoreCase: true },
       },
     ],
-    'no-useless-constructor': 'off',
-    'class-methods-use-this': 'off',
-    'lines-between-class-members': 'off',
-    'import/prefer-default-export': 'off',
     'prettier/prettier': 'error',
   },
   settings: {
