@@ -13,7 +13,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'eslint-plugin-import-helpers'],
   rules: {
     camelcase: 'off',
     'import/no-unresolved': 'error',
