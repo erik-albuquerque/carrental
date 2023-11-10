@@ -16,4 +16,10 @@ categoriesRoutes.post('/', async (req, res) => {
   return res.status(201).send()
 })
 
+categoriesRoutes.get('/', async (req, res) => {
+  const categories = categoriesRepository.list()
+
+  return res.status(200).json({ categories })
+})
+
 export { categoriesRoutes }
