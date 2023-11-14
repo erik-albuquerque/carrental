@@ -8,17 +8,18 @@
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prisma": "ts-node-dev ./node_modules/prisma",
-    "db:migrate": "prisma migrate dev",
-    "db:generate": "prisma generate"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
   },
   "dependencies": {
     "@prisma/client": "5.6.0",
     "csv-parse": "^5.5.2",
     "express": "^4.18.2",
     "multer": "1.4.5-lts.1",
+    "pg": "^8.11.3",
     "prisma": "^5.6.0",
+    "reflect-metadata": "^0.1.13",
     "swagger-ui-express": "^5.0.0",
+    "typeorm": "^0.3.17",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
