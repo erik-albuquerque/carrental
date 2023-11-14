@@ -1,14 +1,16 @@
 import { DataSource } from 'typeorm'
 
+import { Category } from '../modules/cars/entities/Category'
+import { Specification } from '../modules/cars/entities/Specification'
+
 const connection = new DataSource({
   type: 'postgres',
   host: 'localhost',
   username: 'carrental',
   password: 'carrental',
-  database: 'carrental',
   logging: true,
   synchronize: true,
-  entities: [__dirname + '/src/modules/**/entities/*.ts'],
+  entities: [Category, Specification],
   migrations: [__dirname + '/src/database/migrations/*.ts'],
 })
 

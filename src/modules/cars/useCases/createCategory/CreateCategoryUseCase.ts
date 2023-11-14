@@ -8,14 +8,14 @@ interface IRequestPayload {
 class CreateCategoryUseCase {
   constructor(private categoriesRepository: ICategoriesRepository) {}
 
-  execute({ name, description }: IRequestPayload): void {
-    const retrievedCategory = this.categoriesRepository.findByName(name)
+  async execute({ name, description }: IRequestPayload): Promise<void> {
+    const retrievedCategory = await this.categoriesRepository.findByName(name)
 
     if (retrievedCategory) {
       throw new Error('Category already exists!')
     }
 
-    this.categoriesRepository.create({
+    await this.categoriesRepository.create({
       name,
       description,
     })
