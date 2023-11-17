@@ -19,6 +19,7 @@
     "prisma": "^5.6.0",
     "reflect-metadata": "^0.1.13",
     "swagger-ui-express": "^5.0.0",
+    "tsyringe": "^4.8.0",
     "typeorm": "^0.3.17",
     "uuid": "^9.0.1"
   },

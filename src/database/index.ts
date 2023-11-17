@@ -5,7 +5,7 @@ import { Specification } from '../modules/cars/entities/Specification'
 
 const connection = new DataSource({
   type: 'postgres',
-  host: 'localhost',
+  host: '127.0.0.1',
   username: 'carrental',
   password: 'carrental',
   logging: true,
