@@ -1,5 +1,6 @@
 import { DataSource } from 'typeorm'
 
+import { User } from '../modules/accounts/entities/User'
 import { Category } from '../modules/cars/entities/Category'
 import { Specification } from '../modules/cars/entities/Specification'
 
@@ -10,7 +11,7 @@ const connection = new DataSource({
   password: 'carrental',
   logging: true,
   synchronize: true,
-  entities: [Category, Specification],
+  entities: [User, Category, Specification],
   migrations: [__dirname + '/src/database/migrations/*.ts'],
 })
 
