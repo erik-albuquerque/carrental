@@ -11,7 +11,7 @@ const connection = new DataSource({
   password: 'carrental',
   logging: true,
   synchronize: true,
-  entities: [User, Category, Specification],
+  entities: [Category, Specification, User],
   migrations: [__dirname + '/src/database/migrations/*.ts'],
 })
 
