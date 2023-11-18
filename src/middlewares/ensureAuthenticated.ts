@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
 import { verify } from 'jsonwebtoken'
 
+import { AppError } from '../errors/AppError'
 import { UsersRepository } from '../modules/accounts/implementations/UsersRepository'
 
 interface IPayload {
@@ -15,7 +16,7 @@ async function ensureAuthenticated(
   const token = request.headers.authorization?.split(' ')[1]
 
   if (!token) {
-    throw new Error('A token is required!')
+    throw new AppError('A token is required!', 401)
   }
 
   try {
@@ -25,12 +26,12 @@ async function ensureAuthenticated(
     const user = await usersRepository.findById(user_id)
 
     if (!user) {
-      throw new Error('Something is wrong with the token!')
+      throw new AppError('Something is wrong with the token!', 401)
     }
 
     next()
   } catch {
-    throw new Error('Token is broken!')
+    throw new AppError('Token is broken!', 401)
   }
 }
 
