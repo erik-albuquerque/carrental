@@ -12,7 +12,7 @@ const connection = new DataSource({
   logging: true,
   synchronize: true,
   entities: [Category, Specification, User],
-  migrations: [__dirname + '/src/database/migrations/*.ts'],
+  migrations: ['src/database/migrations/*.ts'],
 })
 
 connection
