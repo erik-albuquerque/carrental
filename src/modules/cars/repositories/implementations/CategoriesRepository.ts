@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm'
 
-import { connection } from '../../../../database'
+import { DBDataSource } from '../../../../database'
 import { Category } from '../../entities/Category'
 import {
   ICategoriesRepository,
@@ -11,7 +11,7 @@ class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>
 
   constructor() {
-    this.repository = connection.getRepository(Category)
+    this.repository = DBDataSource.getRepository(Category)
   }
 
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {

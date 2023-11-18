@@ -4,7 +4,7 @@ import { User } from '../modules/accounts/entities/User'
 import { Category } from '../modules/cars/entities/Category'
 import { Specification } from '../modules/cars/entities/Specification'
 
-const connection = new DataSource({
+const DBDataSource = new DataSource({
   type: 'postgres',
   host: '127.0.0.1',
   username: 'carrental',
@@ -15,9 +15,8 @@ const connection = new DataSource({
   migrations: ['src/database/migrations/*.ts'],
 })
 
-connection
-  .initialize()
+DBDataSource.initialize()
   .then(() => console.log('Data source has been initialized'))
   .catch((error) => console.error('Data source initialization error', error))
 
-export { connection }
+export { DBDataSource }
