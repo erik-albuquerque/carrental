@@ -29,6 +29,10 @@ async function ensureAuthenticated(
       throw new AppError('Something is wrong with the token!', 401)
     }
 
+    request.user = {
+      id: user.id,
+    }
+
     next()
   } catch {
     throw new AppError('Token is broken!', 401)
