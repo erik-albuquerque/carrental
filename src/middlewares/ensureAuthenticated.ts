@@ -8,11 +8,11 @@ interface IPayload {
   sub: string
 }
 
-async function ensureAuthenticated(
+const ensureAuthenticated = async (
   request: Request,
   response: Response,
   next: NextFunction,
-) {
+) => {
   const token = request.headers.authorization?.split(' ')[1]
 
   if (!token) {
