@@ -1,12 +1,12 @@
-import { Request, Response, NextFunction } from 'express'
+import { Request, Response /* NextFunction */ } from 'express'
 
-import { AppError } from '@errors/AppError'
+import { AppError } from '@shared/errors/AppError'
 
 const appErrorHandler = (
   error: Error,
   request: Request,
   response: Response,
-  next: NextFunction,
+  // next: NextFunction,
 ) => {
   if (error instanceof AppError) {
     return response.status((error as AppError).statusCode).json({

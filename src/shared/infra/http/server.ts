@@ -4,14 +4,14 @@ import express from 'express'
 import 'express-async-errors'
 import swaggerUi from 'swagger-ui-express'
 
-import './database'
+import '@shared/infra/typeorm'
 
 import '@shared/container'
 
-import { appErrorHandler } from '@middlewares/appErrorHandler'
+import { appErrorHandler } from '@shared/infra/http/middlewares/appErrorHandler'
+import { routes } from '@shared/infra/http/routes'
 
-import { routes } from './routes'
-import swaggerDocument from './swagger.json'
+import swaggerDocument from '../../../swagger.json'
 
 const app = express()
 
