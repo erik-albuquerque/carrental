@@ -7,8 +7,8 @@ import { Specification } from '../modules/cars/entities/Specification'
 const DBDataSource = new DataSource({
   type: 'postgres',
   host: '127.0.0.1',
-  username: 'carrental',
-  password: 'carrental',
+  username: 'carrentalapi',
+  password: 'carrentalapi',
   logging: true,
   synchronize: true,
   entities: [Category, Specification, User],
