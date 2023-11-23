@@ -6,9 +6,10 @@ import swaggerUi from 'swagger-ui-express'
 
 import './database'
 
-import './shared/container'
+import '@shared/container'
 
-import { appErrorHandler } from './middlewares/appErrorHandler'
+import { appErrorHandler } from '@middlewares/appErrorHandler'
+
 import { routes } from './routes'
 import swaggerDocument from './swagger.json'
 
